@@ -61,7 +61,9 @@ opts.forEach((opt) => {
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
-    console.log([num1,operator,num2]);
     const result = operate(num1,operator,num2);
     screen.textContent = result;
 })
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {location.reload()})
