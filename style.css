@@ -3,12 +3,12 @@ body {
     justify-content: center;
 }
 
-.alegreya-sans sc-bold {
-    font-family: "Alegreya Sans SC", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
+.kufam {
+  font-family: "Kufam", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
 
 #calculator {
  background-color: #7f9eb2;
@@ -25,9 +25,16 @@ body {
 
 #screen {
     background-color: #77919d;
-    width: 450px;
-    height: 80px;
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 20px;
+    width: 430px;
+    height: 90px;
     border-radius: 15px;
+    font-family: "Kufam", sans-serif;
+    font-size: 35px;
+    color:#274C5e;
 }
 
 #button_container{
@@ -42,12 +49,12 @@ body {
     width: 30px;
     padding: 20px 30px;
     margin: 5px;
-    font-size: 35px;
+    font-size: 32px;
     text-align: center;
     color: #274C5e;
     border-radius: 15px;
     flex: auto;
-    font-family: "Alegreya Sans SC", sans-serif;
+    font-family: "Kufam", sans-serif;
     font-weight: 700;
     
 }
