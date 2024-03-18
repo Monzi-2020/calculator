@@ -21,28 +21,33 @@ let operator;
 let num2 = "";
 
 function operate(num1,operator,num2){
-    if(operator === '+') {
+    if(operator == '+') {
         add(num1,num2)
     }
-    else if(operator === '-') {
+    else if(operator == '-') {
         subtract(num1,num2)
     }
-    else if(operator === '/') {
+    else if(operator == '/') {
         divide(num1,num2)
     }
-    else if(operator === '*') {
+    else if(operator == '*') {
         multiply(num1,num2);
     }
 }
 
 const screen = document.querySelector('#screen');
 const numbers = document.querySelectorAll('.button.num');
+const opts = document.querySelectorAll('.button.opt');
+
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
-    num1 += number.id;
-    screen.textContent = num1;})})
+    if(operator == undefined) {
+        num1 += number.id;
+        screen.textContent = num1;
+        }
+    });
+});
 
-const opts = document.querySelectorAll('.button.opt');
 opts.forEach((opt) => {
     opt.addEventListener('click', () => {
         operator = opt.getAttribute("value");
@@ -53,9 +58,11 @@ opts.forEach((opt) => {
         screen.textContent = num2;})})
     })
 })
+    
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
+    console.log([num1,operator,num2]);
     const result = operate(num1,operator,num2);
     screen.textContent = result;
 })
