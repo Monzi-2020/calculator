@@ -3,6 +3,13 @@ body {
     justify-content: center;
 }
 
+.alegreya-sans sc-bold {
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
 #calculator {
  background-color: #7f9eb2;
  border-radius: 15px;
@@ -20,6 +27,7 @@ body {
     background-color: #77919d;
     width: 450px;
     height: 80px;
+    border-radius: 15px;
 }
 
 #button_container{
@@ -32,13 +40,14 @@ body {
 .button {
     background-color: #dae9f4;
     width: 30px;
-    padding: 25px 30px;
+    padding: 20px 30px;
     margin: 5px;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 35px;
     text-align: center;
     color: #274C5e;
     border-radius: 15px;
     flex: auto;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 700;
     
 }
