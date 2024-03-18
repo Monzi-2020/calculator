@@ -45,18 +45,15 @@ numbers.forEach((number) => {
         num1 += number.id;
         screen.textContent = num1;
         }
-    });
+    else if(operator != undefined) {
+        num2 += number.id;
+        screen.textContent = num2;}}
+    );
 });
 
 opts.forEach((opt) => {
     opt.addEventListener('click', () => {
-        operator = opt.getAttribute("value");
-        
-    numbers.forEach((number) => {
-        number.addEventListener('click', () => {
-        num2 += number.id;
-        screen.textContent = num2;})})
-    })
+        operator = opt.getAttribute("value");})
 })
 
 const equal = document.querySelector('#equal');
@@ -66,4 +63,10 @@ equal.addEventListener('click', () =>{
 })
 
 const clear = document.querySelector('#clear');
-clear.addEventListener('click', () => {location.reload()})
+clear.addEventListener('click', () => {
+    num1 = "";
+    num2 = "";
+    operator = undefined;
+    screen.textContent = "";
+})
+
