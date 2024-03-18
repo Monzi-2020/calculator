@@ -45,8 +45,8 @@ numbers.forEach((number) => {
 const opts = document.querySelectorAll('.button.opt');
 opts.forEach((opt) => {
     opt.addEventListener('click', () => {
-        operator = opt.id;
-
+        operator = opt.getAttribute("value");
+        
     numbers.forEach((number) => {
         number.addEventListener('click', () => {
         num2 += number.id;
@@ -56,5 +56,6 @@ opts.forEach((opt) => {
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
-
+    const result = operate(num1,operator,num2);
+    screen.textContent = result;
 })
