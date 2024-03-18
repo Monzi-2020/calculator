@@ -20,18 +20,18 @@ let num1 = "";
 let operator;
 let num2 = "";
 
-function operate(num1,operator,num2){
-    if(operator == '+') {
-        add(num1,num2)
+function operate(a,cal,b){
+    if(cal == '+') {
+        return add(+a,+b);
     }
-    else if(operator == '-') {
-        subtract(num1,num2)
+    else if(cal == '-') {
+        return subtract(a,b);
     }
-    else if(operator == '/') {
-        divide(num1,num2)
+    else if(cal == '/') {
+        return divide(a,b);
     }
-    else if(operator == '*') {
-        multiply(num1,num2);
+    else if(cal == '*') {
+        return multiply(a,b);
     }
 }
 
@@ -58,7 +58,6 @@ opts.forEach((opt) => {
         screen.textContent = num2;})})
     })
 })
-    
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
