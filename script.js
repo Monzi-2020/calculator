@@ -16,10 +16,6 @@ function divide(a,b){
     return a/b;
 }
 
-let num1 = "";
-let operator;
-let num2 = "";
-
 function operate(a,cal,b){
     if(cal == '+') {
         return add(+a,+b);
@@ -35,10 +31,13 @@ function operate(a,cal,b){
     }
 }
 
-const screen = document.querySelector('#screen');
-const numbers = document.querySelectorAll('.button.num');
-const opts = document.querySelectorAll('.button.opt');
+let num1 = "";
+let operator;
+let num2 = "";
 
+const screen = document.querySelector('#screen');
+
+const numbers = document.querySelectorAll('.button.num');
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
     if(operator == undefined) {
@@ -46,21 +45,30 @@ numbers.forEach((number) => {
         screen.textContent = num1;
         }
     else if(operator != undefined) {
+        screen.textContent = "";
         num2 += number.id;
-        screen.textContent = num2;}}
+        screen.textContent = num2;
+        num1 = operate(num1,operator,num2)
+        }}
     );
 });
 
+const opts = document.querySelectorAll('.button.opt');
+const equal = document.querySelector('#equal');
 opts.forEach((opt) => {
     opt.addEventListener('click', () => {
-        operator = opt.getAttribute("value");})
+        operator = opt.getAttribute("value");
+        if(num2 != 0) {
+        screen.textContent = num1;
+        num2 = "";}
+    })
 })
 
-const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
-    const result = operate(num1,operator,num2);
-    screen.textContent = result;
+    screen.textContent = num1;
+    num2 = "";
 })
+
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
