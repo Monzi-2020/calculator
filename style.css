@@ -56,6 +56,9 @@ body {
     flex: auto;
     font-family: "Kufam", sans-serif;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -69,7 +72,11 @@ div#\30 {
 
 .backCo{
     background-color: #386d87;
-    color:#dae9f4
+    color:#dae9f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 

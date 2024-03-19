@@ -98,7 +98,7 @@ back.addEventListener('click', () => {
     }
 })
 
-const dot = document.querySelector('#dot');
+const dot = document.querySelector('.button.dot');
 dot.addEventListener('click', () => {
     if(operator == undefined) {
         if(num1 != "" && !num1.includes('.') ) {  
@@ -117,7 +117,7 @@ dot.addEventListener('click', () => {
 
 numbers.forEach((number) => {
     number.addEventListener('mouseover', () => {
-        number.setAttribute('style','background: #bed1df')
+        number.setAttribute('style','background: #bed1df; font-size: 28px; ')
     })
     number.addEventListener('mouseout', () => {
         number.setAttribute('style','background: #dae9f4;')
@@ -126,19 +126,36 @@ numbers.forEach((number) => {
 
 opts.forEach((opt) => {
     opt.addEventListener('mouseover', () => {
-        opt.setAttribute('style','background: #95b5cc;')
+        opt.setAttribute('style','background: #95b5cc; font-size: 28px;')
     })
     opt.addEventListener('mouseout', () => {
         opt.setAttribute('style','background: #b4d1e6')
     })
+    
 })
+
 
 const backColor = document.querySelectorAll('.backCo');
 backColor.forEach((btn) => {
     btn.addEventListener('mouseover', () => {
-        btn.setAttribute('style','background: #305d73;')
+        btn.setAttribute('style','background: #305d73; font-size: 27px;')
     })
     btn.addEventListener('mouseout', () => {
         btn.setAttribute('style','background: #386d87;')
     })
 })
+
+clear.addEventListener('mouseover', () =>{
+    clear.textContent = "Clear";
+})
+clear.addEventListener('mouseout', () =>{
+    clear.textContent = "AC";
+})
+
+back.addEventListener('mouseover', () =>{
+    back.textContent = "Delete";
+})
+back.addEventListener('mouseout', () =>{
+    back.textContent = "DL";
+})
+
