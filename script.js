@@ -65,7 +65,7 @@ opts.forEach((opt) => {
         num2 = "";
         operator = opt.getAttribute("value");
         } 
-        else {
+        else if(num1 != 0) {
         operator = opt.getAttribute("value");
         }
     })
@@ -100,10 +100,11 @@ back.addEventListener('click', () => {
 
 const dot = document.querySelector('#dot');
 dot.addEventListener('click', () => {
-    if(num1 != "" && !num1.includes('.')) {  
-        num1 += '.';
-        screen.textContent = num1;
-    }
+    if(operator == undefined) {
+        if(num1 != "" && !num1.includes('.') ) {  
+            num1 += '.';
+            screen.textContent = num1;
+        }}
     else if(num2 != "" && !num2.includes('.')){
         num2 += '.';
         screen.textContent = num2;
