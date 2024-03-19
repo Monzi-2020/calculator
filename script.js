@@ -61,8 +61,8 @@ opts.forEach((opt) => {
     opt.addEventListener('click', () => {
         if(num2 != 0) {
         let result = operate(num1,operator,num2)
-        screen.textContent = result.toFixed(5);
-        num1 = result;
+        num1 = Math.round(result*100000)/100000;
+        screen.textContent = num1;
         num2 = "";
         operator = opt.getAttribute("value");
         } 
@@ -74,9 +74,9 @@ opts.forEach((opt) => {
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
-    let result = operate(num1,operator,num2)
-    screen.textContent = result.toFixed(5);
-    num1 = result;
+    let result = operate(num1,operator,num2);
+    num1 = Math.round(result*100000)/100000;
+    screen.textContent = num1;
     num2 = "";
 })
 
