@@ -59,21 +59,14 @@ body {
     
 }
 
+
 .button.opt {
     background-color: #b4d1e6;
 }
 
-#clear{
+.backCo{
     background-color: #386d87;
     color:#dae9f4
 }
 
-#back{
-    background-color: #386d87;
-    color:#dae9f4
-}
 
-#equal{
-    background-color: #386d87;
-    color:#dae9f4
-}
