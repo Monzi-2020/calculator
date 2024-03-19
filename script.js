@@ -60,8 +60,9 @@ const opts = document.querySelectorAll('.button.opt');
 opts.forEach((opt) => {
     opt.addEventListener('click', () => {
         if(num2 != 0) {
-        num1 = operate(num1,operator,num2)
-        screen.textContent = num1;
+        let result = operate(num1,operator,num2)
+        screen.textContent = result.toFixed(5);
+        num1 = result;
         num2 = "";
         operator = opt.getAttribute("value");
         } 
@@ -73,8 +74,9 @@ opts.forEach((opt) => {
 
 const equal = document.querySelector('#equal');
 equal.addEventListener('click', () =>{
-    num1 = operate(num1,operator,num2)
-    screen.textContent = num1;
+    let result = operate(num1,operator,num2)
+    screen.textContent = result.toFixed(5);
+    num1 = result;
     num2 = "";
 })
 
@@ -131,7 +133,6 @@ opts.forEach((opt) => {
     opt.addEventListener('mouseout', () => {
         opt.setAttribute('style','background: #b4d1e6')
     })
-    
 })
 
 
