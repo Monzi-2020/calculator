@@ -49,11 +49,8 @@ numbers.forEach((number) => {
         screen.textContent = num1;
         }
     else if(operator != undefined) {
-        // screen.textContent = "";
         num2 += number.id;
         screen.textContent = num2;
-        
-        
         }}
     );
 });
@@ -90,16 +87,29 @@ clear.addEventListener('click', () => {
     screen.textContent = "0";
 })
 
-// const back = document.querySelector('#back');
-// back.addEventListener('click', () => {
-//     if(num2 == ""){
-//     num1 = num1.substring(0, num1.length -1);
-//         screen.textContent = num1;
-//     } else {
-//         num2 = num2.substring(0, num2.length -1)
-//         screen.textContent = num2;
-//     }
-// })
+const back = document.querySelector('#back');
+back.addEventListener('click', () => {
+    if(num2 == ""){
+    num1 = num1.substring(0, num1.length -1);
+        screen.textContent = num1;
+    } else {
+        num2 = num2.substring(0, num2.length -1)
+        screen.textContent = num2;
+    }
+})
+
+const dot = document.querySelector('#dot');
+dot.addEventListener('click', () => {
+    if(num1 != "" && !num1.includes('.')) {  
+        num1 += '.';
+        screen.textContent = num1;
+    }
+    else if(num2 != "" && !num2.includes('.')){
+        num2 += '.';
+        screen.textContent = num2;
+    }
+    
+})
 
 
 // CSS effect below
